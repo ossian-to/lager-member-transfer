@@ -351,22 +351,22 @@ ul.select-account{
 }
 
 .account-list-status{
+  padding: 0 2rem;
   transform: translateY(-36px);
-  &.os{
-    h3{
-      font-size: 1.5rem;
-      color: $primary-color;
-      text-align: initial;
-      background-color: initial;
-    }
-  }
   > h3{
     margin: 0 auto;
     padding: 0.35rem 0 0.25rem;
-    width: 80%;
+    width: 100%;
     color: white;
     background-color: $document-bg-color;
     border-radius: 1em;
+  }
+  h4{
+    margin: 0;
+    padding: 0 0 0.25rem 0;
+    font-size: 1.5rem;
+    text-align: initial;
+    color: $document-bg-color;
   }
   .no-game-account-data{
     padding: 1em 0;
@@ -542,6 +542,7 @@ dl.transfer-status{
 select.select-container{
   margin: 1em auto 0;
   padding: 0.5em 1em;
+  width: 100%;
   border: 1px solid $primary-color;
   border-radius: 5px;
 }
@@ -886,7 +887,7 @@ div:where(.swal2-container) div:where(.swal2-actions){
 
 table.table{
   margin: 1em auto 0;
-  width: 80%;
+  width: 100%;
   font-size: 1rem;
   &.table,
   &.table td,

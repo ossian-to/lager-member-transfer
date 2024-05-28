@@ -1468,22 +1468,24 @@ ul.select-account > li:hover {
   }
 }
 .account-list-status {
+  padding: 0 2rem;
   -webkit-transform: translateY(-36px);
           transform: translateY(-36px);
-}
-.account-list-status.os h3 {
-  font-size: 1.5rem;
-  color: #f333ab;
-  text-align: initial;
-  background-color: initial;
 }
 .account-list-status > h3 {
   margin: 0 auto;
   padding: 0.35rem 0 0.25rem;
-  width: 80%;
+  width: 100%;
   color: white;
   background-color: #f333ab;
   border-radius: 1em;
+}
+.account-list-status h4 {
+  margin: 0;
+  padding: 0 0 0.25rem 0;
+  font-size: 1.5rem;
+  text-align: initial;
+  color: #f333ab;
 }
 .account-list-status .no-game-account-data {
   padding: 1em 0;
@@ -1645,6 +1647,7 @@ dl.transfer-status > dd.box > .transfer-status-info {
 select.select-container {
   margin: 1em auto 0;
   padding: 0.5em 1em;
+  width: 100%;
   border: 1px solid #f333ab;
   border-radius: 5px;
 }
@@ -2021,7 +2024,7 @@ div:where(.swal2-container) div:where(.swal2-actions) {
 
 table.table {
   margin: 1em auto 0;
-  width: 80%;
+  width: 100%;
   font-size: 1rem;
 }
 table.table.table, table.table.table td, table.table.table th {
