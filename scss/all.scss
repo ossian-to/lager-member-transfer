@@ -1,0 +1,924 @@
+@charset "UTF-8";
+@import "initial";
+@import "table/table";
+
+
+
+// 載入思源宋體 Medium
+// font-family: 'Noto Serif TC', serif;
+// font-weight: 500;
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');
+
+
+
+.ossian{
+  position: relative;
+  font-weight: bold;
+  min-width: $document-default-width;
+  // width: 1920px;
+}
+
+
+
+// 主視覺、大標、活動時間---------------------------------------------------------
+
+.main{
+  position: relative;
+  height: 700px;
+  text-align: center;
+  background-image: url(../images/kv-bg.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+// 網站標題
+
+.site-title{
+  position: relative;
+  margin: 0;
+  padding: 2em 0 1.5em;
+  z-index: 1;
+}
+
+@keyframes jump {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(0.85);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+// 活動時間
+
+.site-subtitle{
+  position: relative;
+  margin: 0;
+  padding: 0 0 2em;
+  animation: jump 1s ease-in-out infinite;
+  z-index: 1;
+}
+
+// 轉移服務說明
+
+.transfer-info-btn{
+  position: relative;
+  z-index: 1;
+}
+
+// 雷哈娜
+
+.obj-1{
+  position: absolute;
+  top: 9em;
+  left: calc(50% - 900px);
+  z-index: 1;
+}
+
+// 雷吉斯
+
+.obj-2{
+  position: absolute;
+  top: 0;
+  left: calc(50% + 300px);
+  z-index: 1;
+}
+
+// 搬新家
+
+.new-home{
+  position: absolute;
+  top: 25em;
+  left: calc(50% - 460px);
+  z-index: 1;
+}
+
+
+
+// 會員登錄及顯示---------------------------------------------------------------
+
+.member{
+  position: relative;
+  background-image: url(../images/black-pink.png);
+  article{
+    padding: 3.75em 0;
+    // background-image: url(../images/cloud.png);
+    // background-repeat: no-repeat;
+    // background-position: top center;
+    .Login-lager-member{
+      position: relative;
+      display: block;
+      z-index: 1;
+    }
+    .member-info{
+      display: none;
+    }
+    &.logined{
+      padding: 3.75em 0 14em 0;
+      .Login-lager-member{
+        display: none;
+      }
+      .member-info{
+        display: block;
+        .rocketgames-member{
+          display: none;
+        }
+        &.lager{
+          .rocketgames-member{
+            display: none;
+          }
+        }
+        &.rocketgames{
+          .rocketgames-member{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 登入雷爵會員
+
+.Login-lager-member{
+  text-align: center;
+}
+
+// 會員資訊的區塊
+
+.member-info{
+  position: relative;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  max-width: 960px;
+  width: 100%;
+  font-size: 1.875em;
+  border: 7px solid $document-default-color;
+  border-radius: 50px;
+  background-color: $custom-2;
+  box-shadow: 0 3px white inset, 0 -3px white inset;
+  z-index: 1;
+}
+
+.member-title{
+  margin: 0 auto;
+  max-width: 232px;
+  img{
+    width: 100%;
+  }
+}
+
+dl.member-layout{
+  display: grid;
+  grid-template-columns: 2fr 250px;
+  align-items: center;
+  gap: 0.5em;
+  padding: 1em 2em 1em 1em;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 5px solid $custom-3;
+  background-color: $custom-6;
+  box-shadow: 0 3px 3px $custom-4;
+  dd{
+    &:nth-child(1){
+      font-size: 1.875em;
+    }
+    &:nth-last-child(1){
+      text-align: right;
+    }
+  }
+}
+
+ul.member-message{
+  margin: 0;
+  padding-left: 0;
+  color: $custom-7;
+  li{
+    em{
+      font-style: normal;
+      color: $document-default-color;
+    }
+  }
+}
+
+// 雲朵
+
+.cloud{
+  position: absolute;
+  top: -200px;
+  // bottom: 0;
+  left: calc(50% - 960px);
+  &.bottom{
+    top: initial;
+    bottom: -25px;
+  }
+}
+
+
+
+// 帳號轉移--------------------------------------------------------------------
+
+.transfer{
+  padding-bottom: 2em;
+  background-color: $primary-color;
+  background-image: url(../images/dot.png);
+  background-position: top center;
+}
+
+.status{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1em 3em;
+  padding: 2em 0 0 0;
+  background-image: url(../images/bar.png);
+  background-repeat: no-repeat;
+  background-position: center 2em;
+  .status-tab{
+    position: relative;
+    padding: 3em 0 1em 0;
+    color: white;
+    + .status-content{
+      display: none;
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: calc(50% - 18px);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: white;
+    }
+    &.active{
+      color: $secondary-color;
+      &::before{
+        background-color: $secondary-color;
+      }
+      + .status-content{
+        display: block;
+      }
+    }
+  }
+  .status-tab{
+    order: 0;
+  }
+
+  .status-content{
+    width: 100%;
+    order: 1;
+    text-align: center;
+    color: white;
+    a{
+      color: $secondary-color;
+    }
+    hgroup{
+      padding: 1em;
+      h2{
+        margin: 0;
+        padding: 0;
+        font-size: 3em;
+      }
+      h4{
+        margin: 0;
+        padding: 0;
+        font-size: 1.5em;
+        em{
+          font-style: normal;
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+ul.select-account{
+  margin: 0;
+  padding: 5.5rem 0 2rem 0;
+  list-style: none;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2em;
+  > li{
+    width: 400px;
+    color: $document-default-color;
+    font-size: 1.25em;
+    border-radius: 20px;
+    background-color: white;
+    border: 7px solid rgba(255, 255, 255, 0);
+    transition: border-color 0.3s;
+    &:hover{
+      border-color: $secondary-color;
+    }
+  }
+}
+
+.game-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 144px;
+  height: 144px;
+  background-image: url(../images/mark/bg.png);
+  background-repeat: no-repeat;
+  transform: translateY(-72px);
+  &.flag{
+    transform: initial;
+    > img{
+      animation: leftFlag 0.3s infinite ease-out;
+    }
+  }
+}
+
+@keyframes leftFlag {
+  0%{
+    transform: translateX(0px);
+  }
+  50%{
+    transform: translateX(10px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+
+.account-list-status{
+  transform: translateY(-36px);
+  &.os{
+    h3{
+      font-size: 1.5rem;
+      color: $primary-color;
+      text-align: initial;
+      background-color: initial;
+    }
+  }
+  > h3{
+    margin: 0 auto;
+    padding: 0.35rem 0 0.25rem;
+    width: 80%;
+    color: white;
+    background-color: $document-bg-color;
+    border-radius: 1em;
+  }
+  .no-game-account-data{
+    padding: 1em 0;
+    display: block;
+  }
+  .game-account-list{
+    display: none;
+  }
+  .select-container{
+    display: none;
+  }
+  &.have-an-account{
+    .no-game-account-data{
+      display: none;
+    }
+    .game-account-list{
+      display: block;
+    }
+    .select-container{
+      display: block;
+    }
+  }
+}
+
+ul.game-account-list{
+  margin: 0 auto;
+  padding: 1em 2em 0;
+  list-style: none;
+  text-align: initial;
+  > li{
+    display: inline-block;
+    width: 45%;
+    &:nth-child(1){
+      margin-right: 5%;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+// 自訂義 radio 及 checkbox
+
+.checkbox-radio-container{
+  // display: flex;
+  // align-items: center;
+  // justify-content: flex-start;
+  position: relative;
+  padding: 0 0 0 1.5em;
+  cursor: pointer;
+  user-select: none;
+  &.reset{
+    padding: inherit;
+  }
+  &:hover{
+    [type="checkbox"],
+    [type="radio"]{
+      ~ .custom-style{
+        border-color: $document-bg-color;
+      }
+    }
+  }
+  [type="checkbox"],
+  [type="radio"]{
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    &:checked{
+      ~ .custom-style{
+        border-color: $document-bg-color;
+        background-color: $document-bg-color;
+      }
+      ~ .custom-text{
+        color: $document-bg-color;
+      }
+    }
+  }
+  [type="radio"]{
+    + .custom-style{
+      border-radius: 50%;
+    }
+  }
+  [type="checkbox"]{
+    + .custom-style{
+      border-radius: 5px;
+    }
+  }
+  .custom-style{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    border: 2px solid $document-default-color;
+    background-color: white;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  .custom-text{
+    word-break: break-all; // 強制換行
+    transition: color 0.3s;
+  }
+}
+
+// 轉移狀態
+
+dl.transfer-status{
+  margin: 0;
+  padding: 1em 0 3em;
+  display: grid;
+  grid-template-columns: 1fr 186px 1fr;
+  align-items: center;
+  justify-content: center;
+  // gap: 2rem;
+  > dd{
+    &.box{
+      text-align: initial;
+      font-size: 1.25rem;
+      color: $primary-color;
+      > h3{
+        margin: 0;
+        padding: 0.5em 1em;
+        text-align: center;
+        font-size: 1.5rem;
+        color: white;
+        border-radius: 10px;
+        background-color: $primary-color;
+      }
+      > .transfer-status-info{
+        padding-top: 1rem;
+      }
+      padding: 1em;
+      border-radius: 20px;
+      background-color: white;
+    }
+  }
+}
+
+// 快速註冊搖滾火箭
+
+.quick-registration-form{
+  margin: 0 auto 1em;
+  padding: 2em;
+  width: 400px;
+  color: $document-default-color;
+  text-align: initial;
+  font-size: 1.25em;
+  border-radius: 20px;
+  background-color: white;
+  label{
+    display: block;
+    padding-bottom: 0.5em;
+    &:nth-last-of-type(1){
+      padding-bottom: initial;
+    }
+  }
+  [type="text"],
+  [type="password"]{
+    padding: 0.25em 0.5em;
+    width: 100%;
+    color: $primary-color;
+    font-weight: bold;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+    &:focus{
+      color: white;
+      background-color: $primary-color;
+    }
+  }
+}
+
+// 點數轉移
+
+select.select-container{
+  margin: 1em auto 0;
+  padding: 0.5em 1em;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+}
+
+
+// 頁籤的效果------------------------------------------------------------------
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 1em;
+  margin: 0 auto;
+  // max-width: 300px;
+  width: $document-default-width;
+
+  > input[type="radio"] {
+    display: none;
+
+    &:checked { // focus 狀態
+      + label {
+        color: black;
+        img{
+          filter: initial;
+          &.black-btn-obj{
+            animation: fastJump 0.3s infinite;
+          }
+        }
+        + .tab-content {
+          display: block;
+        }
+      }
+    }
+  }
+
+  > label { // blur 狀態
+    position: relative;
+    width: 300px;
+    color: #fff;
+    cursor: pointer;
+    order: 0;
+    
+    img{
+      transform: initial;
+      filter: grayscale(100%);
+      filter: gray;
+      transition: filter 0.3s, transform 0.3s;
+    }
+    &:hover{  // hover 狀態
+      color: black;
+      img{
+        transform: rotate(7deg);
+        filter: initial;
+      }
+    }
+  }
+  
+  .tab-content {
+    display: none;
+    padding: 1em;
+    width: 100%;
+    // border: 1px solid #ccc;
+    // border-radius: 5px;
+    order: 1;
+  }
+}
+
+.black-btn{
+  position: relative;
+  width: 300px;
+  height: 120px;
+  border-radius: 60px;
+  background-color: $document-default-color;
+}
+
+.black-btn-obj{
+  position: absolute;
+  bottom: 60px;
+  left: calc(50% - 124px);
+}
+
+.black-btn-text{
+  position: absolute;
+  bottom: calc(50% - 30px);
+  left: calc(50% - 124px);
+}
+
+.black-btn-chat{
+  position: absolute;
+  top: -130px;
+  left: 0px;
+}
+
+@keyframes fastJump {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+
+
+// 按鈕設定--------------------------------------------------------------------
+
+a, button{
+  &.btn{
+    display: inline-block;
+    position: relative;
+    padding: 0.45em 1em 0.315em;
+    font-weight: bold;
+    border-radius: 50em;
+    &.max{
+      font-size: 3.75em;
+      border-width: 7px;
+    }
+    &.large{
+      font-size: 2.25em;
+      border-width: 5px;
+    }
+    &.medium{
+      font-size: 1.875em;
+      border-width: 5px;
+    }
+    &.small{
+      font-size: 1em;
+      border-width: 5px;
+    }
+    &.black{
+      color: $custom-1;
+      border-style: solid;
+      border-color: $custom-1;
+      background-color: $document-default-color;
+      transition: color 0.3s, border-color 0.3s;
+      &:hover{
+        color: $custom-5;
+        border-color: $custom-5;
+      }
+    }
+    &.pink{
+      color: $secondary-color;
+      border-style: solid;
+      border-color: $secondary-color;
+      background-color: $primary-color;
+      transition: color 0.3s, border-color 0.3s;
+      &:hover{
+        color: $custom-5;
+        border-color: $custom-5;
+      }
+    }
+    &.yellow{
+      color: $document-default-color;
+      border-style: solid;
+      border-color: $document-default-color;
+      background-color: $custom-1;
+      box-shadow: 0 3px white inset;
+      transition: background-color 0.3s;
+      &:hover{
+        background-color: $custom-5;
+      }
+    }
+    &.animation{
+      &::before{
+        content: "";
+        position: absolute;
+        top: calc(50% - 49px);
+        left: -170px;
+        width: 115px;
+        height: 98px;
+        background-image: url(../images/button/btn-max-left.png);
+        background-repeat: no-repeat;
+        cursor: default;
+        animation: btnLeft 0.5s infinite;
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        top: calc(50% - 49px);
+        right: -170px;
+        width: 115px;
+        height: 98px;
+        background-image: url(../images/button/btn-max-right.png);
+        background-repeat: no-repeat;
+        cursor: default;
+        animation: btnRight 0.5s infinite;
+      }
+    }
+    &.prev-page{
+      margin-right: 1rem;
+    }
+  }
+}
+
+@keyframes btnLeft {
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(20px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+@keyframes btnRight {
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(-20px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+
+
+// 自訂 sweetalert2 樣式--------------------------------------------------------
+
+.swal2-container{
+  font-family: $document-font-family;
+}
+
+// sweetalert2 底色
+
+div:where(.swal2-container) div:where(.swal2-popup){
+  width: 900px;
+  border: 7px solid $document-default-color;
+  border-radius: 50px;
+  background-color: $secondary-color;
+  background-image: url(../images/dot.png);
+  box-shadow: 0 2px 1px rgba(255, 255, 255, 0.85) inset, 0 -2px 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+div:where(.swal2-container).swal2-backdrop-show, div:where(.swal2-container).swal2-noanimation {
+    background: rgba(0,0,0,.8);
+}
+
+// sweetalert2 close 顏色
+
+.swal2-close{
+  color: $custom-2;
+}
+
+// sweetalert2 標題設定
+
+div:where(.swal2-container) h2:where(.swal2-title){
+  padding: 1em 1em 0.25em;
+  color: $document-default-color;
+  // border-bottom: 3px dashed $custom-2;
+}
+
+// 修改預設的文字顏色
+
+div:where(.swal2-container) div:where(.swal2-popup){
+  color: inherit;
+}
+
+// sweetalert2 包含 html 內容的容器
+
+.swal2-html-container{
+  >ul{
+    margin: 0;
+    padding-left: 1.5em;
+    li{
+      text-align: left;
+      line-height: 1.5;
+    }
+  }
+}
+
+div:where(.swal2-container) .swal2-html-container{
+  margin: initial;
+  padding: 0.5em 1em;
+}
+
+// sweetalert2 OK 的按鈕設定
+// 移除按鈕 outline
+
+.swal2-popup .swal2-styled{
+  font-weight: bold;
+  background-color: $custom-8;
+  border-radius: 8px;
+  outline: none;
+}
+.swal2-popup .swal2-styled:focus,
+.swal2-close:focus {
+  box-shadow: none !important;
+}
+
+// 清除按鈕區塊的 margin
+
+div:where(.swal2-container) div:where(.swal2-actions){
+  margin: initial;
+}
+
+// 自訂義 popup
+
+.hgroup{
+  margin: 0 auto;
+}
+
+.popup-title{
+  display: inline-block;
+  margin: 1em 0 0;
+  padding: 0.5em 1em 0.35em;
+  width: 90%;
+  color: $custom-8;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: $custom-3;
+
+  &.non{
+    margin-top: 0;
+  }
+}
+
+.popup-list{
+  margin: 0;
+  padding: 1em 2em; 
+  font-size: 16px; 
+  text-align: initial;
+  background-color: $custom-6; 
+  border: 5px solid $custom-3;
+  border-radius: 30px;
+  em{
+    color: $primary-color;
+    font-style:normal;
+  }
+  a{
+    color: $custom-8;
+  }
+}
+
+// 自訂 table
+
+table.table{
+  margin: 1em auto 0;
+  width: 80%;
+  font-size: 1rem;
+  &.table,
+  &.table td,
+  &.table th {
+    border: 0px solid $color-gray-3;
+  }
+  &.table td,
+  &.table th {
+    padding: 0.5em 0.25em;
+    &:nth-of-type(1),
+    &:nth-of-type(3){
+      width: 46px;
+    }
+  }
+  &.table td{
+    &:nth-of-type(2){
+      text-align: initial;
+    }
+  }
+  &.table th {
+    color: white;
+    background: $primary-color;
+    &:nth-of-type(1){
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+    }
+    &:nth-of-type(3){
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+    }
+  }
+  &.table tbody tr{
+    border-bottom: 1px dashed $primary-color;
+  }
+}

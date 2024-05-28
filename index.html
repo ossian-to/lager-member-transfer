@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷爵會員轉移服務功能</title>
+
+    <!-- FB 社群分享 -->
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:title" content="雷爵會員轉移服務功能">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="雷爵會員轉移服務功能：轉移服務時間：2024/07/03 14:00 開始 - 2024/12/31 23:59 截止">
+    <meta property="og:url" content="https://這裡放活動網址/">
+    <meta property="og:image" content="https://圖檔的絕對路徑/assets/images/fb-1200x640.png"><!--圖檔路徑需改成絕對路徑-->
+    <meta property="og:site_name" content="雷爵會員轉移服務功能。">
+
+    <script src="assets/js/sweetalert2.js"></script>
+
+    <link rel="stylesheet" href="assets/css/all.css?v=1.0">
+
+</head>
+<body>
+
+
+
+    <div class="ossian">
+
+
+
+        <!-- 主視覺、大標、活動時間、雷吉斯、雷哈娜................................................ -->
+        <section class="main">
+            <article>
+                <figure class="site-title"><img src="assets/images/site-title.png" alt="雷爵會員轉移服務"></figure>
+                <figure class="site-subtitle"><img src="assets/images/site-subtitle.png" alt="轉移服務時間：2024/07/03 14:00 開始 - 2024/12/31 23:59 截止"></figure>
+                <button class="btn large yellow transfer-info-btn" id="transferInfo">轉移服務說明</button>
+                <figure class="obj-1"><img src="assets/images/obj-1.png" alt="雷哈娜"></figure>
+                <figure class="obj-2"><img src="assets/images/obj-2.png" alt="雷吉斯"></figure>
+                <figure class="new-home"><img src="assets/images/new-home.png" alt="我們搬新家了"></figure>
+            </article>
+        </section><!--.main end..............................................................-->
+
+
+
+        <!-- 會員登錄及顯示................................................................... -->
+        <section class="member">
+
+
+            
+            <!-- 
+              * <article id="showHideTabs"> 有兩種情況，分別如下：
+              * 1. <article id="showHideTabs"> 表示還未登陸雷爵會員，顯示登入雷爵會員的區塊 (預設值)
+              * 2. <article id="showHideTabs" class="logined"> 表示已登陸雷爵會員，顯示會員資訊的區塊。
+             -->
+            <article id="showHideTabs" class="logined">
+
+
+
+                <!-- 出現登入雷爵會員的按鈕.................................................... -->
+                <div class="Login-lager-member">
+                    <button class="btn max black animation">登入雷爵會員</button>
+                </div><!--.Login-lager-member end...........................................-->
+
+
+
+                <!-- 會員資訊的區塊........................................................... -->
+                <!-- 
+                  * <div class="member-info"> 有兩種情況如下：
+
+                  * 1. <div class="member-info"> 已登錄雷爵會員，但還未登陸搖滾火箭，只顯示雷爵會員的資料 (預設值)
+                  * 2. <div class="member-info rocketgames"> 已登錄搖滾火箭，顯示雷爵會員及搖滾火箭會員資料。
+
+                  * 另外，當使用者點選登出雷爵會員時，也要檢查搖滾火箭的帳號是否有登入，如果有登入搖滾火箭的話，也需同時登出搖滾火箭的帳號。
+                 -->
+                <div class="member-info rocketgames">
+
+
+
+                    <!-- 雷爵的會員資料....................................................... -->
+                    <div class="lager-member">
+                        <figure class="member-title"><img src="assets/images/lager-party-title.png" alt="雷爵會員"></figure>
+                        <dl class="member-layout">
+                            <dd>
+                                <ul class="member-message">
+                                    <li>雷爵會員：<em>ABCDEFGH</em></li>
+                                    <li>會員點數：<em>9999999999999</em></li>
+                                </ul>
+                            </dd>
+                            <dd>
+                                <button class="btn medium black">會員登出</button>
+                            </dd>
+                        </dl>
+                    </div><!--.lager-member end-->
+
+
+
+                    <!-- 搖滾火箭的會員資料.................................................... -->
+                    <div class="rocketgames-member">
+                        <figure class="member-title"><img src="assets/images/rocketgames-title.png" alt="搖滾火箭會員"></figure>
+                        <dl class="member-layout">
+                            <dd>
+                                <ul class="member-message">
+                                    <li>搖滾火箭會員：<em>ABCDEFGH</em></li>
+                                </ul>
+                            </dd>
+                            <dd>
+                                <button class="btn medium black">會員登出</button>
+                            </dd>
+                        </dl>
+                    </div><!--.rocketgames-member end-->
+
+
+
+                </div><!--.member-info end...................................................-->
+
+
+
+                <figure class="cloud bottom"><img src="assets/images/cloud.png" alt="雲朵"></figure>
+
+
+
+            </article>
+
+
+
+        </section><!--.member end............................................................-->
+
+
+
+        <!-- 帳號轉移........................................................................ -->
+        <section class="transfer">
+            <article>
+
+
+                <div class="tabs-switch">
+                <div class="tabs">
+
+
+
+                    <!--   帳號轉移.......................................................... -->
+                    <input type="radio" id="tab-1" name="tab" checked="checked"><!-- 頁籤的預設選項 -->
+                    <label for="tab-1">
+                        <div class="black-btn">
+                            <img src="assets/images/tabs/account-transfer/obj.png" alt="帳號轉移" class="black-btn-obj">
+                            <img src="assets/images/tabs/account-transfer/text.png" alt="帳號轉移" class="black-btn-text">
+                        </div>
+                    </label>
+                    <div class="tab-content">
+
+
+
+                        <div class="status">
+
+
+
+                            <!-- 步驟一： 登入搖滾火箭.........................................-->
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇轉移帳號」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+
+                              其次，當使用者已經登陸搖滾火箭後，則直接進入步驟二。
+                            -->
+                            <div class="status-tab active">
+                                <div class="status-text">登入搖滾火箭</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <button class="btn max black animation">登入搖滾火箭</button>
+                                <p>如果你還沒有搖滾火箭帳號，請先到<a href="https://www.rocketgames.com.tw/mem/mem_register" target="_blank">搖滾火箭官網</a>註冊。</p>
+                            </div><!--.status-content end-->
+                            <!-- 步驟一： 登入搖滾火箭結束......................................-->
+
+
+
+                            <!-- 步驟二： 選擇轉移帳號.........................................-->
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇轉移帳號」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <div class="status-tab">
+                                <div class="status-text">選擇轉移帳號</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>請選擇轉移帳號</h2>
+                                    <h4><em>每款遊戲僅只能轉移一組</em>遊戲帳號資料</h4>
+                                </hgroup>
+                                <ul class="select-account">
+                                    <!-- 天外............................................... -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-1.png" alt="天外LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                         -->
+                                        <div class="account-list-status have-an-account">
+                                            <h3>帳號列表</h3>
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <ul class="game-account-list">
+                                                <li>
+                                                    <label for="moAccount1" class="checkbox-radio-container">
+                                                        <input type="radio" name="mo-game" value="A11111111" id="moAccount1">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A11111111</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="moAccount2" class="checkbox-radio-container">
+                                                        <input type="radio" name="mo-game" value="A22222222" id="moAccount2" checked>
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A22222222</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="moAccount3" class="checkbox-radio-container">
+                                                        <input type="radio" name="mo-game" value="A33333333" id="moAccount3">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A33333333</span>
+                                                    </label>
+                                                </li>
+                                            </ul><!--.game-account-list end-->
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                    <!-- 童話................................................ -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-2.png" alt="童話LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                        -->
+                                        <div class="account-list-status">
+                                            <h3>帳號列表</h3>
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <ul class="game-account-list">
+                                                <li>
+                                                    <label for="nflAccount1" class="checkbox-radio-container">
+                                                        <input type="radio" name="nfl-game" value="A11111111" id="nflAccount1">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A11111111</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="nflAccount2" class="checkbox-radio-container">
+                                                        <input type="radio" name="nfl-game" value="A22222222" id="nflAccount2">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A22222222</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="nflAccount3" class="checkbox-radio-container">
+                                                        <input type="radio" name="nfl-game" value="A33333333" id="nflAccount3">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A33333333</span>
+                                                    </label>
+                                                </li>
+                                            </ul><!--.game-account-list end-->
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                    <!-- 列王紀.............................................. -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-3.png" alt="列王紀LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                        -->
+                                        <div class="account-list-status">
+                                            <h3>帳號列表</h3>
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <ul class="game-account-list">
+                                                <li>
+                                                    <label for="kingsAccount1" class="checkbox-radio-container">
+                                                        <input type="radio" name="king-game" value="A11111111" id="kingsAccount1">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A11111111</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="kingsAccount2" class="checkbox-radio-container">
+                                                        <input type="radio" name="king-game" value="A22222222" id="kingsAccount2">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A22222222</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="kingsAccount3" class="checkbox-radio-container">
+                                                        <input type="radio" name="king-game" value="A33333333" id="kingsAccount3">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A33333333</span>
+                                                    </label>
+                                                </li>
+                                            </ul><!--.game-account-list end-->
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                </ul><!--.select-account end-->
+                                <button class="btn large black">資料轉移</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟二： 選擇轉移帳號結束.......................................-->
+
+
+
+                            <!-- 步驟三： 轉移資料確認..........................................-->
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇轉移帳號」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <div class="status-tab">
+                                <div class="status-text">轉移資料確認</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>轉移資料確認</h2>
+                                    <h4>請注意，如進行<em>轉移資料後，將無法再次修改</em>。</h4>
+                                </hgroup>
+                                <dl class="transfer-status">
+                                    <dd class="box">
+                                        <h3>雷爵會員編號：ABCDEFGH</h3>
+                                        <div class="transfer-status-info">● 天外遊戲帳號：A22222222</div>
+                                    </dd>
+                                    <dd>
+                                        <figure class="game-logo flag"><img src="assets/images/mark/flag.png" alt="箭頭"></figure>
+                                    </dd>
+                                    <dd class="box">
+                                        <h3>轉入</h3>
+                                        <div class="transfer-status-info">● 搖滾火箭會員編號：XXXXXXXXXX</div>
+                                    </dd>
+                                </dl><!--.transfer-status end-->
+                                <button class="btn large pink prev-page">回上一頁</button><button class="btn large black">確認轉移</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟三： 轉移資料確認結束.......................................-->
+
+
+
+                            <!-- 步驟四： 完成轉移.............................................-->
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇轉移帳號」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <div class="status-tab">
+                                <div class="status-text">完成轉移</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>恭喜您，完成會員資料轉移</h2>
+                                    <h4>
+                                        現在就可以馬上到<a href="https://www.rocketgames.com.tw/mem/mem_lobby" target="_blank">搖滾火箭會員中心</a>，查詢轉移的資料是否有誤。<br>
+                                        如果遇到任何疑問，請洽詢客服人員協助處理
+                                    </h4>
+                                </hgroup>
+                                <button class="btn large pink">回到首頁</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟四： 完成轉移結束..........................................-->
+
+
+
+                        </div><!--.steps end-->
+
+
+
+                    </div><!--.tab-content end-->
+                    <!--   帳號轉移結束....................................................... -->
+
+
+
+                    <!--   搖滾火箭快速註冊.................................................... -->
+                    <input type="radio" name="tab" id="tab-2">
+                    <label for="tab-2">
+                        <div class="black-btn">
+                            <img src="assets/images/tabs/quick-reg/obj.png" alt="搖滾火箭快速註冊" class="black-btn-obj">
+                            <img src="assets/images/tabs/quick-reg/text.png" alt="搖滾火箭快速註冊" class="black-btn-text">
+                            <img src="assets/images/tabs/quick-reg/chat.png" alt="複數帳號使用" class="black-btn-chat">
+                        </div>
+                    </label>
+                    <div class="tab-content">
+
+
+
+                        <div class="status">
+
+
+
+                            <!-- 步驟一： 快速註冊搖滾火箭.......................................-->
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「快速註冊搖滾火箭」、「選擇轉移帳號」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+
+                              其次，當使用者已經登陸搖滾火箭後，則直接進入步驟二。
+                            -->
+                            <div class="status-tab active">
+                                <div class="status-text">快速註冊搖滾火箭</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>快速註冊搖滾火箭</h2>
+                                </hgroup>
+                                <div class="quick-registration-form">
+                                    <label for="memberAccount">
+                                        <div>會員帳號</div>
+                                        <input type="text" id="memberAccount">
+                                    </label>
+                                    <label for="memberPassword">
+                                        <div>會員密碼</div>
+                                        <input type="password" id="memberPassword">
+                                    </label>
+                                    <label for="memberRePassword">
+                                        <div>確認密碼</div>
+                                        <input type="password" id="memberRePassword">
+                                    </label>
+                                </div>
+                                <button class="btn large black">下一步</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟一： 快速註冊搖滾火箭結束....................................-->
+
+
+
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「快速註冊搖滾火箭」、「選擇轉移帳號」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <!-- 步驟二： 選擇轉移帳號...........................................-->
+                            <div class="status-tab">
+                                <div class="status-text">選擇轉移帳號</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>請選擇轉移帳號</h2>
+                                    <h4><em>每款遊戲僅只能轉移一組</em>遊戲帳號資料</h4>
+                                </hgroup>
+                                <ul class="select-account">
+                                    <!-- 天外............................................... -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-1.png" alt="天外LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                        -->
+                                        <div class="account-list-status have-an-account">
+                                            <h3>帳號列表</h3>
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <ul class="game-account-list">
+                                                <li>
+                                                    <label for="quickRegMoAccount1" class="checkbox-radio-container">
+                                                        <input type="radio" name="mo-game" value="A11111111" id="quickRegMoAccount1">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A11111111</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="quickRegMoAccount2" class="checkbox-radio-container">
+                                                        <input type="radio" name="mo-game" value="A22222222" id="quickRegMoAccount2" checked>
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A22222222</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="quickRegMoAccount3" class="checkbox-radio-container">
+                                                        <input type="radio" name="mo-game" value="A33333333" id="quickRegMoAccount3">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A33333333</span>
+                                                    </label>
+                                                </li>
+                                            </ul><!--.game-account-list end-->
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                    <!-- 童話............................................... -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-2.png" alt="童話LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                        -->
+                                        <div class="account-list-status">
+                                            <h3>帳號列表</h3>
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <ul class="game-account-list">
+                                                <li>
+                                                    <label for="quickRegNflAccount1" class="checkbox-radio-container">
+                                                        <input type="radio" name="nfl-game" value="A11111111" id="quickRegNflAccount1">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A11111111</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="quickRegNflAccount2" class="checkbox-radio-container">
+                                                        <input type="radio" name="nfl-game" value="A22222222" id="quickRegNflAccount2">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A22222222</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="quickRegNflAccount3" class="checkbox-radio-container">
+                                                        <input type="radio" name="nfl-game" value="A33333333" id="quickRegNflAccount3">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A33333333</span>
+                                                    </label>
+                                                </li>
+                                            </ul><!--.game-account-list end-->
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                    <!-- 列王紀............................................. -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-3.png" alt="列王紀LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                        -->
+                                        <div class="account-list-status">
+                                            <h3>帳號列表</h3>
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <ul class="game-account-list">
+                                                <li>
+                                                    <label for="quickRegKingsAccount1" class="checkbox-radio-container">
+                                                        <input type="radio" name="king-game" value="A11111111" id="quickRegKingsAccount1">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A11111111</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="quickRegKingsAccount2" class="checkbox-radio-container">
+                                                        <input type="radio" name="king-game" value="A22222222" id="quickRegKingsAccount2">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A22222222</span>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label for="quickRegKingsAccount3" class="checkbox-radio-container">
+                                                        <input type="radio" name="king-game" value="A33333333" id="quickRegKingsAccount3">
+                                                        <span class="custom-style"></span>
+                                                        <span class="custom-text">A33333333</span>
+                                                    </label>
+                                                </li>
+                                            </ul><!--.game-account-list end-->
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                </ul><!--.select-account end-->
+                                <button class="btn large black">資料轉移</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟二： 選擇轉移帳號結束.......................................-->
+
+
+
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「快速註冊搖滾火箭」、「選擇轉移帳號」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <!-- 步驟三： 轉移資料確認...........................................-->
+                            <div class="status-tab">
+                                <div class="status-text">轉移資料確認</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>轉移資料確認</h2>
+                                    <h4>請注意，如進行<em>轉移資料後，將無法再次修改</em>。</h4>
+                                </hgroup>
+                                <dl class="transfer-status">
+                                    <dd class="box">
+                                        <h3>雷爵會員編號：ABCDEFGH</h3>
+                                        <div class="transfer-status-info">● 天外遊戲帳號：A22222222</div>
+                                    </dd>
+                                    <dd>
+                                        <figure class="game-logo flag"><img src="assets/images/mark/flag.png" alt="箭頭"></figure>
+                                    </dd>
+                                    <dd class="box">
+                                        <h3>轉入</h3>
+                                        <div class="transfer-status-info">● 搖滾火箭會員編號：XXXXXXXXXX</div>
+                                    </dd>
+                                </dl><!--.transfer-status end-->
+                                <button class="btn large pink prev-page" >回上一頁</button><button class="btn large black">確認轉移</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟三： 轉移資料確認結束.......................................-->
+
+
+
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「快速註冊搖滾火箭」、「選擇轉移帳號」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <!-- 步驟四： 轉移資料確認...........................................-->
+                            <div class="status-tab">
+                                <div class="status-text">完成轉移</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>恭喜您，完成會員資料轉移</h2>
+                                    <h4>
+                                        現在就可以馬上到<a href="https://www.rocketgames.com.tw/mem/mem_lobby" target="_blank">搖滾火箭會員中心</a>，查詢轉移的資料是否有誤。<br>
+                                        如果遇到任何疑問，請洽詢客服人員協助處理
+                                    </h4>
+                                </hgroup>
+                                <button class="btn large pink">回到首頁</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟四： 選轉移資料確認結束.......................................-->
+
+
+
+                        </div><!--.status end-->
+
+
+
+                    </div><!--.tab-content end-->
+                    <!--   快速註冊搖滾火箭結束................................................. -->
+
+
+
+                    <!--   點數轉移........................................................... -->
+                    <input type="radio" name="tab" id="tab-3">
+                    <label for="tab-3">
+                        <div class="black-btn">
+                            <img src="assets/images/tabs/points-transfer/obj.png" alt="點數轉移" class="black-btn-obj">
+                            <img src="assets/images/tabs/points-transfer/text.png" alt="點數轉移" class="black-btn-text">
+                            <img src="assets/images/tabs/points-transfer/chat.png" alt="複數帳號不可使用" class="black-btn-chat">
+                        </div>
+                    </label>
+                    <div class="tab-content">
+
+
+
+                        <div class="status">
+
+
+
+                            <!-- 步驟一： 登入搖滾火箭.........................................-->
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇置物櫃物品」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+
+                              其次，當使用者已經登陸搖滾火箭後，則直接進入步驟二。
+                            -->
+                            <div class="status-tab active">
+                                <div class="status-text">登入搖滾火箭</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <button class="btn max black animation">登入搖滾火箭</button>
+                                <p>如果你還沒有搖滾火箭帳號，請先到<a href="https://www.rocketgames.com.tw/mem/mem_register" target="_blank">搖滾火箭官網</a>註冊。</p>
+                            </div><!--.status-content end-->
+                            <!-- 步驟一： 登入搖滾火箭結束......................................-->
+
+
+
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇轉移帳號」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <!-- 步驟二： 選擇轉移帳號...........................................-->
+                            <div class="status-tab">
+                                <div class="status-text">選擇轉移帳號</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>請選擇轉移帳號</h2>
+                                    <h4><em>每款遊戲僅只能轉移一組</em>遊戲帳號資料</h4>
+                                </hgroup>
+                                <ul class="select-account">
+                                    <!-- 天外............................................... -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-1.png" alt="天外LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                        -->
+                                        <div class="account-list-status have-an-account">
+                                            <h3>帳號列表</h3>
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <select class="select-container">
+                                                <optgroup label="選擇點數">
+                                                    <option value="30點點數轉天外30點">30點點數轉天外30點</option>
+                                                </optgroup>
+                                            </select>
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                    <!-- 童話............................................... -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-2.png" alt="童話LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                        -->
+                                        <div class="account-list-status">
+                                            <h3>帳號列表</h3>
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <select class="select-container">
+                                                <optgroup label="選擇點數">
+                                                    <option value="30點點數轉童話30點">30點點數轉童話30點</option>
+                                                </optgroup>
+                                            </select>
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                    <!-- 列王紀............................................. -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-3.png" alt="列王紀LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                        -->
+                                        <div class="account-list-status">
+                                            <h3>帳號列表</h3>
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <select class="select-container">
+                                                <optgroup label="選擇點數">
+                                                    <option value="30點點數轉列王紀30點">30點點數轉列王紀30點</option>
+                                                </optgroup>
+                                            </select>
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                </ul><!--.select-account end-->
+                                <button class="btn large black">資料轉移</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟二： 選擇轉移帳號結束.......................................-->
+
+
+
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇轉移帳號」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <!-- 步驟三： 轉移資料確認...........................................-->
+                            <div class="status-tab">
+                                <div class="status-text">轉移資料確認</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>轉移資料確認</h2>
+                                    <h4>請注意，如進行<em>轉移資料後，將無法再次修改</em>。</h4>
+                                </hgroup>
+                                <dl class="transfer-status">
+                                    <dd class="box">
+                                        <h3>雷爵會員編號：ABCDEFGH</h3>
+                                        <div class="transfer-status-info">● 30點點數轉天外30點</div>
+                                    </dd>
+                                    <dd>
+                                        <figure class="game-logo flag"><img src="assets/images/mark/flag.png" alt="箭頭"></figure>
+                                    </dd>
+                                    <dd class="box">
+                                        <h3>轉入</h3>
+                                        <div class="transfer-status-info">● 搖滾火箭會員編號：XXXXXXXXXX</div>
+                                    </dd>
+                                </dl><!--.transfer-status end-->
+                                <button class="btn large pink prev-page" >回上一頁</button><button class="btn large black">確認轉移</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟三： 轉移資料確認結束.......................................-->
+
+
+
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇轉移帳號」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <!-- 步驟四： 轉移資料確認...........................................-->
+                            <div class="status-tab">
+                                <div class="status-text">完成轉移</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>恭喜您，完成會員資料轉移</h2>
+                                    <h4>
+                                        現在就可以馬上到<a href="https://www.rocketgames.com.tw/mem/mem_lobby" target="_blank">搖滾火箭會員中心</a>，查詢轉移的資料是否有誤。<br>
+                                        如果遇到任何疑問，請洽詢客服人員協助處理
+                                    </h4>
+                                </hgroup>
+                                <button class="btn large pink">回到首頁</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟四： 選轉移資料確認結束.......................................-->
+
+
+
+                        </div><!--.status end-->
+
+
+
+                    </div><!--.tab-content end-->
+                    <!--   點數轉移結束....................................................... -->
+
+
+
+                    <!--   置物櫃轉移......................................................... -->
+                    <input type="radio" name="tab" id="tab-4">
+                    <label for="tab-4">
+                        <div class="black-btn">
+                            <img src="assets/images/tabs/obj-transfer/obj.png" alt="置物櫃轉移" class="black-btn-obj">
+                            <img src="assets/images/tabs/obj-transfer/text.png" alt="置物櫃轉移" class="black-btn-text">
+                            <img src="assets/images/tabs/obj-transfer/chat.png" alt="複數帳號不可使用" class="black-btn-chat">
+                        </div>
+                    </label>
+                    <div class="tab-content">
+
+
+
+                        <div class="status">
+
+
+
+                            <!-- 步驟一： 登入搖滾火箭.........................................-->
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇置物櫃物品」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+
+                              其次，當使用者已經登陸搖滾火箭後，則直接進入步驟二。
+                            -->
+                            <div class="status-tab">
+                                <div class="status-text">登入搖滾火箭</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <button class="btn max black animation">登入搖滾火箭</button>
+                                <p>如果你還沒有搖滾火箭帳號，請先到<a href="https://www.rocketgames.com.tw/mem/mem_register" target="_blank">搖滾火箭官網</a>註冊。</p>
+                            </div><!--.status-content end-->
+                            <!-- 步驟一： 登入搖滾火箭結束......................................-->
+
+
+
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇置物櫃物品」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <!-- 步驟二： 選擇置物櫃物品.........................................-->
+                            <div class="status-tab active">
+                                <div class="status-text">選擇置物櫃物品</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>請選擇置物櫃物品</h2>
+                                    <h4><em>每款遊戲僅只能轉移一組</em>遊戲帳號資料</h4>
+                                </hgroup>
+                                <ul class="select-account">
+                                    <!-- 天外............................................... -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-1.png" alt="天外LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status os"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status os"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status os have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                        -->
+                                        <div class="account-list-status os have-an-account">
+                                            <h3>● A22222222</h3>
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>領取</th>
+                                                        <th>商品名稱</th>
+                                                        <th>數量</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <label for="moVirtualTreasure1" class="checkbox-radio-container">
+                                                                <input type="checkbox" value="SP鑽石軟糖x5、SP鑽石種子x5" id="moVirtualTreasure1">
+                                                                <span class="custom-style"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td>
+                                                            <label for="moVirtualTreasure1" class="checkbox-radio-container reset">SP鑽石軟糖x5、SP鑽石種子x5</label>
+                                                        </td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label for="moVirtualTreasure2" class="checkbox-radio-container">
+                                                                <input type="checkbox" value="SP鑽石軟糖x5、SP鑽石種子x5" id="moVirtualTreasure2">
+                                                                <span class="custom-style"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td>
+                                                            <label for="moVirtualTreasure2" class="checkbox-radio-container reset">SP鑽石軟糖x5、SP鑽石種子x5</label>
+                                                        </td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                    <!-- 童話............................................... -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-2.png" alt="童話LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                        -->
+                                        <div class="account-list-status">
+                                            <!-- <h3>帳號列表</h3> -->
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <select class="select-container">
+                                                <optgroup label="選擇點數">
+                                                    <option value="30點點數轉童話30點">30點點數轉童話30點</option>
+                                                </optgroup>
+                                            </select>
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                    <!-- 列王紀............................................. -->
+                                    <li>
+                                        <figure class="game-logo"><img src="assets/images/mark/logo-3.png" alt="列王紀LOGO"></figure>
+                                        <!-- 
+                                          * <div class="account-list-status"> 有兩種狀態，內容如下：
+                                          * 1. <div class="account-list-status"> 當使用者沒有任何遊戲帳號時使用 (預設值)
+                                          * 2. <div class="account-list-status have-an-account"> 當使用者有一組以上(含一組)的遊戲帳號時使用
+                                        -->
+                                        <div class="account-list-status">
+                                            <!-- <h3>帳號列表</h3> -->
+                                            <div class="no-game-account-data">無任何遊戲帳號資料</div>
+                                            <select class="select-container">
+                                                <optgroup label="選擇點數">
+                                                    <option value="30點點數轉列王紀30點">30點點數轉列王紀30點</option>
+                                                </optgroup>
+                                            </select>
+                                        </div><!--.account-list-status end-->
+                                    </li>
+                                </ul><!--.select-account end-->
+                                <button class="btn large black">資料轉移</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟二： 選擇置物櫃物品結束.....................................-->
+
+
+
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇置物櫃物品」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <!-- 步驟三： 轉移資料確認...........................................-->
+                            <div class="status-tab">
+                                <div class="status-text">轉移資料確認</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>轉移資料確認</h2>
+                                    <h4>請注意，如進行<em>轉移資料後，將無法再次修改</em>。</h4>
+                                </hgroup>
+                                <dl class="transfer-status">
+                                    <dd class="box">
+                                        <h3>雷爵會員編號：ABCDEFGH</h3>
+                                        <div class="transfer-status-info">● SP鑽石軟糖x5、SP鑽石</div>
+                                    </dd>
+                                    <dd>
+                                        <figure class="game-logo flag"><img src="assets/images/mark/flag.png" alt="箭頭"></figure>
+                                    </dd>
+                                    <dd class="box">
+                                        <h3>轉入</h3>
+                                        <div class="transfer-status-info">● 搖滾火箭會員編號：XXXXXXXXXX</div>
+                                    </dd>
+                                </dl><!--.transfer-status end-->
+                                <button class="btn large pink prev-page" >回上一頁</button><button class="btn large black">確認轉移</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟三： 轉移資料確認結束.......................................-->
+
+
+
+                            <!-- 
+                              <div class="steps">...</div> 有四個步驟
+                              分別為「登入搖滾火箭」、「選擇置物櫃物品」、「轉移資料確認」、「完成轉移」
+                              * 當前狀態標示方式為 <div class="status-tab active">...</div>
+                              * 預設不顯示任何資訊 <div class="status-tab">...</div>
+                            -->
+                            <!-- 步驟四： 轉移資料確認...........................................-->
+                            <div class="status-tab">
+                                <div class="status-text">完成轉移</div>
+                            </div><!--.status-tab end-->
+                            <div class="status-content">
+                                <hgroup>
+                                    <h2>恭喜您，完成會員資料轉移</h2>
+                                    <h4>
+                                        現在就可以馬上到<a href="https://www.rocketgames.com.tw/mem/mem_lobby" target="_blank">搖滾火箭會員中心</a>，查詢轉移的資料是否有誤。<br>
+                                        如果遇到任何疑問，請洽詢客服人員協助處理
+                                    </h4>
+                                </hgroup>
+                                <button class="btn large pink">回到首頁</button>
+                            </div><!--.status-content end-->
+                            <!-- 步驟四： 選轉移資料確認結束.......................................-->
+
+
+
+                        </div><!--.status end-->
+                    </div><!--.tab-content end-->
+                    <!--   置物櫃轉移結束..................................................... -->
+
+
+
+                </div><!--.tabs end-->
+                </div><!--.tabs-switch end-->
+
+
+
+                
+            </article>
+        </section><!--.transfer end..........................................................-->
+
+
+
+    </div><!--.ossian end-->
+
+
+
+    <script>
+
+
+
+    // 秀出轉移服務說明的內容 (SweetAlert2)
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // 取得按鈕 A 元素
+        var btnA = document.getElementById('transferInfo');
+        // 為按鈕 A 元素添加點擊事件監聽器
+        btnA.addEventListener('click', function (event) {
+            // 阻止預設的超連結行為
+            event.preventDefault();
+            // 彈出 SweetAlert2 對話框
+            Swal.fire({
+                title: '帳號轉移時間<br>2024/07/03 14:00開始 - 2024/12/31 23:59截止。',
+                html: '<hgroup class="hgroup"><h3 class="popup-title non">帳號轉移說明規則</h3></hgroup><ol class="popup-list"><li>於會員轉移服務功能頁中，先登入「<em>雷爵會員帳號</em>」。</li><li>完成登入後，再進行「<em>搖滾火箭會員帳號</em>」登入進行資料連接流程。</li><li>此時服務功能頁中，將會顯示可轉移的「<em>遊戲帳號</em>」與「<em>會員點數</em>」、「<em>會員置物櫃</em>」資料。</li><li>承 3 確認完相關資料後，開始選擇要轉移的資料項目，並確認轉移。</li><li>完成轉移後，系統將進行資料刷新與儲存流程並強制登出會員帳號。</li></ol><hgroup class="hgroup"><h3 class="popup-title">「天外online」玩家特別注意事項</h3></hgroup><ul class="popup-list"><li>一個搖滾火箭會員帳號僅可接受轉移一個遊戲帳號，如有多組遊戲帳號則必須要多組相同數量的會員帳號。<br><em>舉例：</em>A 玩家的 A1000 雷爵會員帳號底下有 10 個天外遊戲帳號，則轉移資料至搖滾火箭帳號時，僅只可選擇 1 個天外遊戲帳號進行轉移。</li></ul><hgroup class="hgroup"><h3 class="popup-title">帳號轉移注意事項</h3></hgroup><ol class="popup-list"><li>一個搖滾火箭會員帳號僅可接受轉移一個遊戲帳號，如有多組遊戲帳號則必須要多組相同數量的會員帳號。<br><em>舉例：</em>如對轉移服務功能有疑惑者，可以透過<a href="" target="_blank">粉絲團</a>或<a href="" target="_blank">搖滾火箭客服中心</a>，進行詢問。</li><li>轉移不可逆轉，如完成轉移後，無法再次修改。</li><li>每款遊戲僅只有一個遊戲帳號可以轉移至搖滾火箭會員帳號內。如有複數帳號則必須要有對應數量的搖滾火箭會員帳號。</li><li>有大量複數遊戲帳號者，可以透過「<em>快速轉移註冊搖滾火箭會員</em>」服務功能進行轉移。</li><li>請注意透過「<em>快速轉移註冊搖滾火箭會員</em>」的天外、童話帳號，無法使用配點、置物櫃轉移功能。</li><li>請注意「<em>快速轉移註冊搖滾火箭會員</em>」因無相關認證服務，因此該帳號無法享受會員服務功能，如需使用會員服務功能，請完成會員資料填補。</li><li>轉移服務僅限指定時間內可進行，超時將無法再提供相關服務。</li><li>上述所有內容本公司有調整之修改、變更或暫停之權利，如有未盡事宜，悉依相關規定或解釋，並得隨時補充公告說明，並保有本次公告內容最終解釋權。</li></ol>',
+                confirmButtonText: '確定'
+            });
+        });
+    });
+
+
+
+    // 檢查 #showHideTabs 元素是否包含 .logined，
+    // 如果包含的 .logined 就顯示 .tabs-switch，並為 .cloud 加上 .bottom
+    // 反之，則隱藏 .tabs-switch，並將 .cloud 的 .bottom 移除
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var showHideTabs = document.getElementById('showHideTabs');
+        var tabsSwitch = document.querySelector('.tabs-switch');
+        var cloudFigure = document.querySelector('.cloud');
+
+        function displayClass() {
+            if (showHideTabs.classList.contains('logined')) {
+                tabsSwitch.style.display = 'block';
+                cloudFigure.classList.add('bottom');
+            } else {
+                tabsSwitch.style.display = 'none';
+                cloudFigure.classList.remove('bottom');
+            }
+        }
+
+        // 檢查
+        displayClass();
+
+        // 如果 class 可能會動態添加或移除，使用 addRemoveClass
+        var observer = new addRemoveClass(displayClass);
+        observer.observe(showHideTabs, { attributes: true, attributeFilter: ['class'] });
+    });
+
+
+
+    </script>
+</body>
+</html>
