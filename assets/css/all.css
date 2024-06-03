@@ -1285,6 +1285,57 @@ ul.member-message li em {
   color: #080301;
 }
 
+.lager-member-account-password {
+  display: none;
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  max-width: 960px;
+  width: 100%;
+  font-size: 1.875rem;
+  border-radius: 30px;
+  border: 5px solid #ffd545;
+  background-color: #fff7b2;
+  z-index: 1;
+}
+
+.input-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  width: 680px;
+}
+
+.google-recaptcha {
+  padding: 1rem;
+  text-align: center;
+}
+
+.lager-member-fields div {
+  text-align: initial;
+}
+.lager-member-fields div > input[type=text],
+.lager-member-fields div > input[type=password] {
+  padding: 0.25em 0.5em;
+  width: 100%;
+  color: #f333ab;
+  font-weight: bold;
+  border: 1px solid #f333ab;
+  border-radius: 5px;
+  -webkit-transition: color 0.3s, background-color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+}
+.lager-member-fields div > input[type=text]:focus,
+.lager-member-fields div > input[type=password]:focus {
+  color: white;
+  background-color: #f333ab;
+}
+
 .cloud {
   position: absolute;
   top: -200px;
@@ -1509,7 +1560,7 @@ ul.select-account > li:hover {
 
 ul.game-account-list {
   margin: 0 auto;
-  padding: 1em 2em 0;
+  padding: 1em 0 0;
   list-style: none;
   text-align: initial;
 }
@@ -1786,19 +1837,19 @@ a.btn, button.btn {
   border-radius: 50em;
 }
 a.btn.max, button.btn.max {
-  font-size: 3.75em;
+  font-size: 3.75rem;
   border-width: 7px;
 }
 a.btn.large, button.btn.large {
-  font-size: 2.25em;
+  font-size: 2.25rem;
   border-width: 5px;
 }
 a.btn.medium, button.btn.medium {
-  font-size: 1.875em;
+  font-size: 1.875rem;
   border-width: 5px;
 }
 a.btn.small, button.btn.small {
-  font-size: 1em;
+  font-size: 1rem;
   border-width: 5px;
 }
 a.btn.black, button.btn.black {

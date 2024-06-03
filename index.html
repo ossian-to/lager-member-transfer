@@ -51,13 +51,31 @@
               * 1. <article id="showHideTabs"> 表示還未登陸雷爵會員，顯示登入雷爵會員的區塊 (預設值)
               * 2. <article id="showHideTabs" class="logined"> 表示已登陸雷爵會員，顯示會員資訊的區塊。
              -->
-            <article id="showHideTabs">
+            <article id="showHideTabs" class="logined">
 
 
 
                 <!-- 出現登入雷爵會員的按鈕.................................................... -->
                 <div class="Login-lager-member">
-                    <button class="btn max black animation">登入雷爵會員</button>
+                    <button class="btn max black animation" id="lagerMemberInput">登入雷爵會員</button>
+                    <!-- 顯示雷爵會員的帳號密碼輸入欄位 -->
+                    <div class="lager-member-account-password">
+                        <div class="input-form">
+                            <label for="lagerMemberAccount" class="lager-member-fields">
+                                <div>雷爵會員帳號：</div>
+                                <div><input type="text" id="lagerMemberAccount"></div>
+                            </label>
+                            <label for="lagerMemberPassword" class="lager-member-fields">
+                                <div>雷爵會員密碼：</div>
+                                <div><input type="password" id="lagerMemberPassword"></div>
+                            </label>
+                        </div><!--.input-form end-->
+                        <div class="google-recaptcha">
+                            google recaptcha 檢查請放這邊
+                        </div>
+                        <button class="btn medium black">確認</button>
+                    </div><!--.lager-member-account-password end-->
+                    <!-- 顯示雷爵會員的帳號密碼輸入欄位結束 -->
                 </div><!--.Login-lager-member end...........................................-->
 
 
@@ -1129,9 +1147,18 @@
         // 檢查
         displayClass();
 
-        // 如果 class 可能會動態添加或移除，使用 addRemoveClass
-        var observer = new addRemoveClass(displayClass);
-        observer.observe(showHideTabs, { attributes: true, attributeFilter: ['class'] });
+        // 檢查 #lagerMemberInput 是否有點選
+        // 點選後，#lagerMemberInput display 設為 none
+        // .lager-member-account-password 的 display 改成 block
+        
+        document.getElementById('lagerMemberInput').addEventListener('click', function () {
+            // 隱藏按鈕本身
+            this.style.display = 'none';
+
+            // 顯示 .lager-member-account-password
+            var memberInputForm = document.querySelector('.lager-member-account-password');
+            memberInputForm.style.display = 'block';
+        });
     });
 
 
